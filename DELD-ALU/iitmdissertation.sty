@@ -29,9 +29,9 @@
                 nogroupskip,
                 toc]
                {glossaries}
-\RequirePackage[intoc]
-               {nomencl}
-\makenomenclature
+% nomencl package removed for project report
+% \RequirePackage[intoc]{nomencl}
+% \makenomenclature
 
 \ifdiss@devx
 \RequirePackage{fontspec}
@@ -109,7 +109,7 @@
     \newcommand\prematter{%
         \pagestyle{empty}
         \begin{doublespacing}
-        \input zz-imp/pre-imp-do-covers
+        % Cover pages removed for project report
         \end{doublespacing}
         \pagestyle{plain}
         \pagenumbering{arabic}
@@ -118,10 +118,13 @@
     \newcommand\prematter{%
         \pagestyle{empty}
         \renewcommand*{\chapterpagestyle}{empty}
-        \input zz-imp/pre-imp-do-covers
+        % Cover pages removed for project report
     }
 \fi
-\newcommand\printCertificate{\input zz-imp/pre-imp-cert}
+\newcommand\printCertificate{%
+    \input 0-prematter/pre-cert-guides
+    \input 0-prematter/pre-cert-attr
+}
 %
 %
 % Configure the display-style quotes
@@ -388,7 +391,7 @@
 %
 %
 %
-\newcommand\printCV{\input zz-imp/back-imp-cv}
+\newcommand\printCV{\input 3-backmatter/back-cv-education}
 \newcommand\printCommittee{\pagestyle{plain}\thispagestyle{plain}\input 3-backmatter/back-committee}
 \allowdisplaybreaks
 %

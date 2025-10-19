@@ -2,7 +2,7 @@
 
 ## Summary
 
-Your **Group 5 - 4-Bit ALU Project** repository has been cleaned and is ready for GitHub upload.
+Your **Group 8 - 4-Bit ALU Project** repository has been cleaned and is ready for GitHub upload.
 
 ---
 
@@ -154,7 +154,7 @@ cd "/home/sudheesh/Documents/CET/deld project/DELD-ALU"
 
 git init
 git add .
-git commit -m "Initial commit: Group 5 4-Bit ALU Project Report"
+git commit -m "Initial commit: Group 8 4-Bit ALU Project Report"
 git remote add origin https://github.com/YOUR-USERNAME/4-bit-alu-project.git
 git branch -M main
 git push -u origin main
@@ -193,7 +193,7 @@ See **GITHUB_SETUP.md** for detailed instructions.
 
 ## Team Information
 
-**Group 5 - 4-Bit ALU Project**
+**Group 8 - 4-Bit ALU Project**
 
 - GOWRIKRISHNA V (29)
 - GOWTHAM KRISHNA P K (30)

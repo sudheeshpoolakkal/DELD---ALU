@@ -1,6 +1,6 @@
 # 4-Bit ALU Project Report
 
-> **Group 5 - Digital Electronics and Logic System Design (PBEOT304)**  
+> **Group 8 - Digital Electronics and Logic System Design (PBEOT304)**  
 > Department of Electrical and Computer Engineering  
 > College of Engineering, Trivandrum  
 > Academic Year 2025-26 (Odd Semester)

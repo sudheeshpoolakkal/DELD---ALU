@@ -7,7 +7,7 @@
 1. Go to https://github.com
 2. Click the "+" icon in top right → "New repository"
 3. Repository name: `4-bit-alu-project` (or your choice)
-4. Description: "Group 5 - 4-Bit ALU Design and Implementation"
+4. Description: "Group 8 - 4-Bit ALU Design and Implementation"
 5. Choose Public or Private
 6. **DO NOT** initialize with README (we already have one)
 7. Click "Create repository"
@@ -26,7 +26,7 @@ git init
 git add .
 
 # Commit with message
-git commit -m "Initial commit: Group 5 4-Bit ALU Project Report"
+git commit -m "Initial commit: Group 8 4-Bit ALU Project Report"
 
 # Add your GitHub repository as remote
 git remote add origin https://github.com/YOUR-USERNAME/4-bit-alu-project.git

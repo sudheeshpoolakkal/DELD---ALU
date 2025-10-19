@@ -6,41 +6,46 @@ echo "4-Bit ALU Report Compilation Script"
 echo "======================================"
 echo ""
 
-# Check if we're in the right directory
-if [ ! -f "thesis.tex" ]; then
-    echo "Error: thesis.tex not found!"
-    echo "Please run this script from the DELD-ALU folder"
-    exit 1
-fi
-
+# Step 1: First LaTeX pass
 echo "Step 1/4: First LaTeX pass..."
-pdflatex -interaction=nonstopmode thesis.tex > /dev/null 2>&1
-if [ $? -eq 0 ]; then
+xelatex -interaction=nonstopmode thesis.tex > /dev/null 2>&1
+if [ -f thesis.pdf ]; then
     echo "✓ First pass completed"
 else
     echo "✗ First pass failed - check thesis.log for errors"
     exit 1
 fi
 
+# Step 2: Bibliography
 echo "Step 2/4: Processing bibliography..."
 bibtex thesis > /dev/null 2>&1
 echo "✓ Bibliography processed"
 
+# Step 3: Second LaTeX pass
 echo "Step 3/4: Second LaTeX pass..."
-pdflatex -interaction=nonstopmode thesis.tex > /dev/null 2>&1
+xelatex -interaction=nonstopmode thesis.tex > /dev/null 2>&1
 echo "✓ Second pass completed"
 
+# Step 4: Final LaTeX pass
 echo "Step 4/4: Final LaTeX pass..."
-pdflatex -interaction=nonstopmode thesis.tex > /dev/null 2>&1
-echo "✓ Final pass completed"
+xelatex -interaction=nonstopmode thesis.tex > /dev/null 2>&1
+if [ -f thesis.pdf ]; then
+    echo "✓ Final pass completed"
+else
+    echo "✗ Final pass failed"
+    exit 1
+fi
 
 echo ""
 echo "======================================"
 echo "✓ Compilation successful!"
 echo "======================================"
 echo ""
-echo "Your PDF is ready: thesis.pdf"
+echo "Output file: thesis.pdf"
+ls -lh thesis.pdf
 echo ""
-echo "File size: $(du -h thesis.pdf | cut -f1)"
-echo "Total pages: $(pdfinfo thesis.pdf 2>/dev/null | grep Pages | awk '{print $2}')"
+PAGES=$(pdfinfo thesis.pdf 2>/dev/null | grep Pages | awk '{print $2}')
+if [ ! -z "$PAGES" ]; then
+    echo "PDF created with $PAGES pages"
+fi
 echo ""
