@@ -1,0 +1,199 @@
+\chapter{Implementation and Block Diagrams}
+
+The 4-bit ALU implementation consists of three main functional blocks: the Adder/Subtractor unit for arithmetic operations, the Multiplier unit, and the Logic Operations unit. Each block is designed with discrete digital components and controlled by selection signals.
+
+\section{Adder/Subtractor Block Diagram}
+
+The adder/subtractor circuit uses a 4-bit ripple-carry adder with XOR gates for two's complement subtraction. The control signal determines whether the operation is addition or subtraction.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{adder-substractor}
+    \caption{4-Bit Adder/Subtractor Block Diagram showing the ripple-carry adder structure with XOR gates for two's complement generation}
+    \label{fig:adder-subtractor}
+\end{figure}
+
+\textbf{Key Components:}
+\begin{itemize}
+    \item 4-bit Full Adder (74LS83 or discrete implementation using half adders)
+    \item XOR gates for two's complement generation during subtraction
+    \item Control signal (Add/Sub) for operation selection
+    \item Carry output and overflow detection circuitry
+    \item 4-bit input ports A and B
+    \item 4-bit output port for Sum/Difference
+\end{itemize}
+
+\textbf{Operation:}
+\begin{itemize}
+    \item \textbf{Addition Mode:} When control signal is 0, the circuit performs A + B
+    \item \textbf{Subtraction Mode:} When control signal is 1, the circuit performs A - B using two's complement (A + \textoverline{B} + 1)
+\end{itemize}
+
+\subsection{Building Blocks: Half Adder and Full Adder}
+
+The adder/subtractor is built using fundamental building blocks. The half adder and full adder circuits form the foundation of all arithmetic operations.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{half-adder}
+    \caption{Half Adder circuit diagram showing basic addition of two single bits}
+    \label{fig:half-adder}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{full-adder}
+    \caption{Full Adder circuit diagram with carry input for cascading multiple stages}
+    \label{fig:full-adder}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{subtractor}
+    \caption{Subtractor circuit using two's complement method with XOR gates}
+    \label{fig:subtractor}
+\end{figure}
+
+\section{Multiplier Block Diagram}
+
+The 4-bit multiplier uses the shift-and-add algorithm implemented with AND gates and adders to perform binary multiplication. The output is an 8-bit result to accommodate the full product range.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{multiplier}
+    \caption{4-Bit Multiplier Block Diagram using shift-and-add algorithm with AND gate arrays and multi-stage adders}
+    \label{fig:multiplier}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\textwidth]{multiplier-circuit}
+    \caption{Detailed multiplier circuit implementation showing partial product generation and summation stages}
+    \label{fig:multiplier-circuit}
+\end{figure}
+
+\textbf{Key Components:}
+\begin{itemize}
+    \item AND gate arrays (4×4 = 16 AND gates) for partial product generation
+    \item Multi-stage full adders for partial product summation
+    \item 8-bit output register for final product result
+    \item Two 4-bit input ports (Multiplicand and Multiplier)
+\end{itemize}
+
+\textbf{Operation:}
+\begin{itemize}
+    \item Each bit of the multiplier is ANDed with all bits of multiplicand
+    \item Partial products are shifted and added using full adder chains
+    \item Final 8-bit product = Multiplicand × Multiplier
+\end{itemize}
+
+\section{Divider Block Diagram}
+
+The 4-bit divider implements the restoring division algorithm using subtraction and shift operations. The circuit produces a 4-bit quotient and a 4-bit remainder.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{divider}
+    \caption{4-Bit Divider Block Diagram implementing restoring division algorithm with subtraction and shift operations}
+    \label{fig:divider}
+\end{figure}
+
+\textbf{Key Components:}
+\begin{itemize}
+    \item 4-bit subtractor circuit for trial subtraction
+    \item Shift registers for dividend and quotient management
+    \item Comparator circuit to determine quotient bits
+    \item Control logic for restoring operations
+    \item Two 4-bit input ports (Dividend and Divisor)
+    \item Two 4-bit output ports (Quotient and Remainder)
+\end{itemize}
+
+\textbf{Operation:}
+\begin{itemize}
+    \item Performs sequential subtraction and shift operations
+    \item Quotient bit is set if subtraction result is non-negative
+    \item Restores partial remainder if subtraction result is negative
+    \item Final result: Dividend = Divisor × Quotient + Remainder
+\end{itemize}
+
+\section{Logic Operations Block Diagram}
+
+The logic unit performs bitwise operations (AND, OR, XOR) on 4-bit inputs using basic logic gates with parallel implementation. A multiplexer selects the desired operation output.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{local-operations}
+    \caption{Logic Operations Block Diagram showing parallel implementation of bitwise AND, OR, and XOR operations with multiplexer-based output selection}
+    \label{fig:logic-operations}
+\end{figure}
+
+\textbf{Key Components:}
+\begin{itemize}
+    \item 4 × AND gates (74LS08) for bitwise AND operation
+    \item 4 × OR gates (74LS32) for bitwise OR operation
+    \item 4 × XOR gates (74LS86) for bitwise XOR operation
+    \item 4-bit 3-to-1 multiplexer for operation selection
+    \item Two 4-bit input ports A and B
+    \item 4-bit output port for result
+\end{itemize}
+
+\textbf{Operation:}
+\begin{itemize}
+    \item \textbf{AND Operation:} Each bit: $C_i = A_i \cdot B_i$ for $i = 0$ to $3$
+    \item \textbf{OR Operation:} Each bit: $C_i = A_i + B_i$ for $i = 0$ to $3$
+    \item \textbf{XOR Operation:} Each bit: $C_i = A_i \oplus B_i$ for $i = 0$ to $3$
+\end{itemize}
+
+\subsection{Multiplexer for Operation Selection}
+
+A 4-bit multiplexer is used to select between different functional unit outputs based on the control signals.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{4-bit-multiplexer}
+    \caption{4-Bit Multiplexer used for selecting operation results in the ALU}
+    \label{fig:4bit-mux}
+\end{figure}
+
+\subsection{Comparator Circuit}
+
+The comparator circuit is used for comparison operations and generating status flags.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{4-bit-comparator}
+    \caption{4-Bit Comparator circuit for magnitude comparison operations}
+    \label{fig:4bit-comparator}
+\end{figure}
+
+\section{Complete ALU Integration}
+
+The complete ALU integrates all functional blocks with a control unit that selects the desired operation based on control signals.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{complete-alu-diagram}
+    \caption{Complete 4-Bit ALU Circuit Diagram showing integration of all functional blocks with control unit}
+    \label{fig:complete-alu}
+\end{figure}
+
+\textbf{Control Signal Mapping:}
+\begin{table}
+\captionabove{ALU Operation Control Signals}
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{S2} & \textbf{S1} & \textbf{S0} & \textbf{Operation} \\
+\midrule
+0 & 0 & 0 & Addition \\
+0 & 0 & 1 & Subtraction \\
+0 & 1 & 0 & Multiplication \\
+0 & 1 & 1 & Division \\
+1 & 0 & 0 & AND \\
+1 & 0 & 1 & OR \\
+1 & 1 & 0 & XOR \\
+1 & 1 & 1 & Reserved \\
+\bottomrule
+\end{tabular}
+\label{tab:control-signals}
+\end{table}

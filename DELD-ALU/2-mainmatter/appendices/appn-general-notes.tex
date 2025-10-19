@@ -1,0 +1,108 @@
+\chapter{Appendix: Additional Information}
+
+This appendix contains supplementary information, datasheets references, and technical details that support the main project report.
+
+\section{Component Datasheets}
+
+The following integrated circuits were used in the implementation of the 4-bit ALU. Detailed datasheets are available from Texas Instruments and other manufacturers:
+
+\subsection{Logic Gates}
+\begin{itemize}
+    \item \textbf{74LS08} -- Quad 2-Input AND Gate
+    \item \textbf{74LS32} -- Quad 2-Input OR Gate
+    \item \textbf{74LS86} -- Quad 2-Input XOR Gate
+    \item \textbf{74LS04} -- Hex Inverter (NOT Gate)
+\end{itemize}
+
+\subsection{Arithmetic Components}
+\begin{itemize}
+    \item \textbf{74LS83} -- 4-Bit Binary Full Adder with Fast Carry
+    \item \textbf{74LS181} -- 4-Bit Arithmetic Logic Unit (for comparison reference)
+\end{itemize}
+
+\subsection{Multiplexers and Decoders}
+\begin{itemize}
+    \item \textbf{74LS151} -- 8-to-1 Line Data Selector/Multiplexer
+    \item \textbf{74LS153} -- Dual 4-to-1 Line Data Selector/Multiplexer
+    \item \textbf{74LS138} -- 3-to-8 Line Decoder/Demultiplexer
+\end{itemize}
+
+\subsection{Flip-Flops and Registers}
+\begin{itemize}
+    \item \textbf{74LS74} -- Dual D-Type Positive Edge-Triggered Flip-Flop
+    \item \textbf{74LS175} -- Quad D-Type Flip-Flop
+\end{itemize}
+
+\section{Truth Tables}
+
+\subsection{4-Bit Addition Truth Table (Sample)}
+\begin{table}[h]
+\captionabove{Sample Addition Truth Table}
+\centering
+\begin{tabular}{cccccc}
+\toprule
+\textbf{A (4-bit)} & \textbf{B (4-bit)} & \textbf{Sum (4-bit)} & \textbf{Carry} \\
+\midrule
+0000 & 0000 & 0000 & 0 \\
+0001 & 0001 & 0010 & 0 \\
+0011 & 0101 & 1000 & 0 \\
+1111 & 0001 & 0000 & 1 \\
+1010 & 0110 & 0000 & 1 \\
+\bottomrule
+\end{tabular}
+\label{tab:addition-truth}
+\end{table}
+
+\subsection{Logical Operations Truth Table}
+\begin{table}[h]
+\captionabove{Bitwise Logical Operations (Single Bit)}
+\centering
+\begin{tabular}{cccccc}
+\toprule
+\textbf{A} & \textbf{B} & \textbf{AND} & \textbf{OR} & \textbf{XOR} \\
+\midrule
+0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 1 \\
+1 & 1 & 1 & 1 & 0 \\
+\bottomrule
+\end{tabular}
+\label{tab:logic-truth}
+\end{table}
+
+\section{Project Timeline}
+
+The project was completed in phases over the course of the semester:
+
+\begin{enumerate}
+    \item \textbf{Week 1-2:} Problem analysis and literature review
+    \item \textbf{Week 3-4:} Circuit design and schematic development
+    \item \textbf{Week 5-6:} Simulation using Proteus and Logisim
+    \item \textbf{Week 7-8:} Component procurement and breadboard assembly
+    \item \textbf{Week 9-10:} Hardware implementation and testing
+    \item \textbf{Week 11-12:} Debugging, optimization, and documentation
+\end{enumerate}
+
+\section{Acknowledgments}
+
+Special thanks to the Department of Electrical and Computer Engineering, College of Engineering Trivandrum, for providing laboratory facilities and resources for this project. We are grateful to our project guide Saina Deepthi for her continuous support and guidance throughout the project duration.
+
+\section{Course Information}
+
+\begin{table}[h]
+\captionabove{Project Course Details}
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Details} \\
+\midrule
+Course Code & PBEOT304 \\
+Course Name & Digital Electronics and Logic System Design \\
+Semester & S3 EL \\
+Academic Year & 2025-26 (Odd Semester) \\
+Institution & College of Engineering, Trivandrum \\
+Department & Electrical and Computer Engineering \\
+\bottomrule
+\end{tabular}
+\label{tab:course-info}
+\end{table}

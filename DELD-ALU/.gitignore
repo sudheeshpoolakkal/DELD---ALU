@@ -1,0 +1,43 @@
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.idx
+*.ilg
+*.ind
+*.nlo
+*.nls
+*.glo
+*.gls
+*.glg
+*.ist
+*.acn
+*.acr
+*.alg
+*.glsdefs
+*.xdy
+*.nav
+*.snm
+*.vrb
+*.lol
+*.bcf
+*.run.xml
+
+# Temporary files
+*~
+*.swp
+*.swo
+*.bak
+.DS_Store
+Thumbs.db
+
+# Output PDF (optional - uncomment if you want to track the PDF)
+# thesis.pdf

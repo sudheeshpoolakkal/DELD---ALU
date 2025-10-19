@@ -1,0 +1,252 @@
+PBL PROJECT REPORT
+BASIC INFORMATION
+College Name: College of Engineering, Trivandrum
+Department: Electrical and Electronics Engineering
+Course: Digital Electronics and Logic System Design (PBEOT304)
+Semester: S3EL
+Academic Year: 2025-26 (Odd)
+Project Title: 4-BIT ALU
+Name and Roll No. (Team Members) : GOWRIKRISHNA V (29)
+​
+
+​
+
+​
+
+​
+
+​
+
+GOWTHAM KRISHNA P K(30)
+
+​
+
+​
+
+​
+
+​
+
+​
+
+HARIKRISHNAN SANTHOSH (31)
+
+​
+
+​
+
+​
+
+​
+
+​
+
+HARIKRISHNA S(32)
+
+​
+
+​
+
+​
+
+​
+
+​
+
+SUDHEESH (64)
+
+ABSTRACT
+Problem Statement: Modern computing relies fundamentally on the Arithmetic Logic Unit (ALU)
+for all data processing. This project addressed the need to practically realize and demonstrate
+the core operational and architectural principles of a processor’s central component, starting
+from the most basic digital building blocks.
+Objectives: The primary objective was to design and implement a comprehensive 4-bit ALU
+using discrete digital components, specifically basic logic gates and flip-flops. The unit was
+designed to execute essential arithmetic operations (addition, subtraction, multiplication, and
+division) and foundational bitwise logical operations (AND, OR, XOR). The project also explicitly
+aimed to enhance the understanding of digital logic design by showcasing the internal structure
+of these data manipulation circuits.
+Methodology: The design utilized a modular approach. Sub-circuits, such as the 4-bit
+ripple-carry adder (for addition and subtraction via two’s complement) and dedicated
+multiplication/division logic, were constructed using AND, OR, and XOR gates. Flip-flops were
+integrated for control and state management. A control unit, built with multiplexers and
+decoders, governed the selection of the desired operation. Rigorous testing was employed via
+
+simulation to verify the functionality and accuracy of all implemented operations against the
+required truth tables.
+Key Results: The project successfully delivered a functioning, modular 4-bit ALU prototype. The
+implementation validated core principles of digital logic design, demonstrating how simple gates
+are combined into complex, functional processing units capable of fundamental data
+manipulation. This work serves as an essential foundation for understanding CPU internal
+architecture.
+
+1. INTRODUCTION
+The project is motivated by the fundamental role of the Arithmetic Logic Unit (ALU) in all digital
+computing. The ALU is essentially the "brain" of a Central Processing Unit (CPU) because it
+performs all the calculations and logical decisions needed to execute software instructions.
+
+2. OBJECTIVES
+List the main objectives of your project:
+1.Design and Implementation: To successfully design and construct a functional 4-bit ALU using
+fundamental digital components, including basic logic gates (AND, OR, NOT, XOR) and flip-flops
+(for control and state).
+2.Operational Capability: To ensure the implemented ALU is capable of performing a defined
+set of fundamental operations, which must include:
+●​ Arithmetic: Addition, subtraction, multiplication, and division.
+●​ Logic: Bitwise AND, OR, and XOR.
+3. Demonstrate Working Principle: To demonstrate the practical working of an ALU by showing
+how it manipulates 4-bit data inputs according to a control signal that selects the desired
+operation.
+4. Educational Outcome: To enhance the understanding of digital logic design principles and
+showcase the internal architecture of complex data manipulation circuits, thereby providing a
+foundational understanding of CPU operation.
+
+3. METHODOLOGY
+The project followed a four-stage, structured design methodology, ensuring that all functional
+and timing requirements were met before proceeding to physical construction.
+
+3.1 Problem Analysis –
+-​
+
+The primary objective is to design and implement a comprehensive 4-bit Arithmetic
+Logic Unit (ALU) using discrete digital components (basic logic gates and flip-flops) to
+execute essential arithmetic and bitwise logical operations.
+
+-​
+-​
+
+Circuit Design
+Simulation – Tools used (e.g.Logisim, Proteus etc.)
+
+-​
+-​
+
+3.4 ​ Hardware Implementation – ​
+​
+After successful verification through circuit simulation, the 4-bit Arithmetic Logic Unit
+(ALU) was realized as a physical, functional prototype. The implementation utilized a
+breadboard environment to facilitate easy assembly, modification, and debugging.
+
+-​
+-​
+
+Sl. No​​
+
+-​
+
+2
+
+-​
+
+3
+
+-​
+
+4
+
+​
+
+​
+
+Component ​​
+
+​
+
+Specification / Description
+
+1
+
+5
+
+-​
+
+Testing and Troubleshooting – Verification of circuit operation
+
+4. IMPLEMENTATION
+4.1 Circuit Diagram
+​
+​
+SIMULATION DIAGRAM​
+
+ALU ​
+
+​
+
+MULTIPLIER​
+
+DIVIDER​
+
+-​
+
+Simulation Results – Add simulation screenshots and explain outcomes.
+
+-​
+
+Hardware Implementation – Add photos and discuss results.
+
+5. RESULTS​
+The validation phase of the 4-bit ALU project involved comparing results obtained from
+two critical environments: software simulation (ideal logic) and physical hardware
+implementation (real-world performance). This comparison was essential for certifying
+the design's functional correctness and stability.​
+​
+●​ SIMULATION RESULT
+The circuit was first simulated using Proteus Design Suite to validate the logical
+operation of each subsystem. Key findings include:
+
+6. INNOVATION AND APPLICATION
+Unique Features
+The project's innovation lies in the ground-up realization and comprehensive functional
+integration of the 4-bit ALU. It is unique because it:
+1.​ Integrated the MULTIPLIER AND DIVIDER CIRCUIT which made the circuit much cost
+effective.
+2.​ Employs a modular design (AU, LU, Control) that directly reflects the VLSI architecture
+used in commercial processors, providing a scalable blueprint.
+
+Real-World Applications
+The 4-bit ALU serves as a fundamental model for all digital electronics, with direct applications
+in:
+●​ Microprocessor Architecture: It is the conceptual core of every CPU and GPU , teaching
+the basics of the data path, control logic, and flag management.
+●​ Embedded Systems: Its principles are used in low-power microcontrollers and digital
+sensors.
+●​ Hardware Design Skills: The process validates skills necessary for designing custom
+digital logic using Hardware Description Languages (HDL) for FPGAs and ASICs.
+
+7. CHALLENGES AND TROUBLESHOOTING
+Faced availability
+
+8. CONCLUSION
+Summarize your findings, project outcomes, and scope for future improvement.
+
+9. REFERENCES
+Floyd, T. L. (2015). Digital Fundamentals (11th Edition). Pearson Education. ​
+​
+Malvino, A. P., & Leach, D. P. (2017). Digital Principles and Applications (8th Edition). McGraw-Hill
+Education.​
+​
+Boylestad, R. L. (2016). Electronic Devices and Circuit Theory (11th Edition). Pearson Education.
+●​ Datasheet – 74LS86 Quad 2-Input XOR Gate, Texas Instruments, Available at: [Insert URL
+link to a 74LS86 datasheet]
+○​ Used for bitwise XOR operations and as a core component in the Full Adder and
+Subtractor circuits.
+●​ Datasheet – 74LS32 Quad 2-Input OR Gate, Texas Instruments, Available at: [Insert URL
+link to a 74LS32 datasheet]
+○​ Used for bitwise OR operations and general combinatorial logic.
+●​ Datasheet – 74LS08 Quad 2-Input AND Gate, Texas Instruments, Available at: [Insert URL
+link to a 74LS08 datasheet]
+○​ Used for bitwise AND operations and general combinatorial logic.
+●​ Datasheet – 74LS151 8-to-1 Line Data Selector/Multiplexer, Texas Instruments, Available
+at: [Insert URL link to a 74LS151 datasheet]
+○​ Essential for the ALU's output stage to select the result from the correct
+functional unit (Arithmetic or Logic).
+●​ Datasheet – 74LS83 4-Bit Binary Full Adder, Texas Instruments, Available at: [Insert URL
+link to a 74LS83 datasheet]
+○​ If utilizing a pre-packaged adder IC, this datasheet details pinouts and
+ripple-carry functionality.
+
+​
+10. APPENDIX
+Include datasheets, code snippets, or additional figures if required.
+
+

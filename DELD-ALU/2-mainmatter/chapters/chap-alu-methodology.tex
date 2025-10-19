@@ -1,0 +1,89 @@
+\chapter{Methodology}
+
+The project followed a \textbf{four-stage structured design methodology}, ensuring that all functional and timing requirements were met before proceeding to physical construction.
+
+\section{Problem Analysis}
+
+The primary objective is to design and implement a comprehensive 4-bit Arithmetic Logic Unit (ALU) using discrete digital components (basic logic gates and flip-flops) to execute essential arithmetic and bitwise logical operations.
+
+Key considerations during the problem analysis phase included:
+\begin{itemize}
+    \item Identifying the required arithmetic operations (addition, subtraction, multiplication, division)
+    \item Defining the logical operations (AND, OR, XOR)
+    \item Determining the control signal requirements for operation selection
+    \item Establishing the modular architecture for the ALU design
+    \item Analyzing timing and propagation delays
+    \item Planning for testability and debugging
+\end{itemize}
+
+\section{Circuit Design}
+
+The circuit design phase involved creating detailed schematics for each functional block of the ALU. The design was modular, consisting of:
+
+\begin{table}
+\captionabove{ALU Functional Blocks}
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Module} & \textbf{Description} \\
+\midrule
+Arithmetic Unit (AU) & Addition, subtraction, multiplication, division \\
+Logic Unit (LU) & Bitwise AND, OR, XOR operations \\
+Control Unit & Operation selector using multiplexers \\
+Output Stage & Result propagation and flag generation \\
+\bottomrule
+\end{tabular}
+\label{tab:alu-blocks}
+\end{table}
+
+\section{Simulation}
+
+\textbf{Tools used:} Logisim, Proteus Design Suite
+
+Before physical implementation, comprehensive simulation was performed to verify the logical correctness of the design. This phase included:
+
+\begin{enumerate}
+    \item \textbf{Truth Table Verification} -- Validating all operations against expected outputs
+    \item \textbf{Timing Analysis} -- Ensuring proper signal propagation and no race conditions
+    \item \textbf{Edge Case Testing} -- Identifying potential design flaws with boundary conditions
+    \item \textbf{Integration Testing} -- Verifying module interactions
+    \item \textbf{Iterative Refinement} -- Making improvements based on simulation results
+\end{enumerate}
+
+\section{Hardware Implementation}
+
+After successful verification through circuit simulation, the 4-bit Arithmetic Logic Unit (ALU) was realized as a physical, functional prototype. The implementation utilized a breadboard environment to facilitate easy assembly, modification, and debugging.
+
+\subsection{Components List}
+
+\begin{table}
+\captionabove{Hardware Components Used in Implementation}
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Sl. No} & \textbf{Component} & \textbf{Specification} \\
+\midrule
+1 & Logic Gates & 74LS08 (AND), 74LS32 (OR), 74LS86 (XOR) \\
+2 & Multiplexers & 74LS151 (8-to-1 MUX) \\
+3 & Full Adder & 74LS83 (4-bit binary full adder) \\
+4 & Flip-Flops & 74LS74 (D-type flip-flops) \\
+5 & Display & LED indicators \\
+6 & Power Supply & 5V DC regulated \\
+7 & Breadboard & Solderless breadboard \\
+8 & Wires & Jumper wires \\
+\bottomrule
+\end{tabular}
+\label{tab:components}
+\end{table}
+
+\section{Testing and Troubleshooting}
+
+Verification of circuit operation was performed through systematic testing procedures:
+
+\begin{enumerate}
+    \item \textbf{Unit Testing} -- Functional testing of individual modules
+    \item \textbf{Integration Testing} -- Testing the complete ALU system
+    \item \textbf{Comparison Testing} -- Comparing hardware results with simulation
+    \item \textbf{Stress Testing} -- Testing with various input combinations
+    \item \textbf{Debugging} -- Identifying and resolving discrepancies
+\end{enumerate}
